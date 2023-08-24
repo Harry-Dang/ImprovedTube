@@ -260,6 +260,8 @@ ImprovedTube.pageType = function () {
 		document.documentElement.dataset.pageType = 'subscriptions';
 	} else if (/\/@|(\/(channel|user|c)\/)[^/]+(?!\/videos)/.test(location.href)) {
 		document.documentElement.dataset.pageType = 'channel';
+	} else if (/\/shorts\//.test(location.href)) {
+		document.documentElement.dataset.pageType = 'shorts';
 	} else {
 		document.documentElement.dataset.pageType = 'other';
 	}
@@ -351,6 +353,7 @@ ImprovedTube.initPlayer = function () {
 		ImprovedTube.playerRotateButton();
 		ImprovedTube.playerPopupButton();
 		ImprovedTube.playerControls();
+		// ImprovedTube.shortsRedirect();
 
 		setTimeout(function () {
             ImprovedTube.forcedTheaterMode();

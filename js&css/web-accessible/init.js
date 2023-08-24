@@ -59,6 +59,7 @@ ImprovedTube.init = function () {
 	this.onkeydown();
 	this.onmousedown();
 	this.youtubeLanguage();
+	this.shortsRedirect(); // link from outside youtube
 
 	if (ImprovedTube.elements.player && ImprovedTube.elements.player.setPlaybackRate) {
 		ImprovedTube.videoPageUpdate();
@@ -80,6 +81,7 @@ document.addEventListener('yt-navigate-finish', function () {
 	}
 
 	ImprovedTube.channelPlayAllButton();
+	ImprovedTube.shortsRedirect(); // click short within youtube
 });
 
 document.addEventListener('yt-page-data-updated', function (event) {

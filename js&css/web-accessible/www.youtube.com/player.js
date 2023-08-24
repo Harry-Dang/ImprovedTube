@@ -1049,3 +1049,21 @@ ImprovedTube.miniPlayer = function () {
 		window.removeEventListener('mousemove', this.miniPlayer_cursorUpdate);
 	}
 };
+/*------------------------------------------------------------------------------
+REDIRECT SHORTS PLAYER
+------------------------------------------------------------------------------*/
+ImprovedTube.shortsRedirect = function () {
+	console.log("[ImprovedTube/player disableShortsPlayer]");
+	if (this.storage.shorts_redirect === true &&
+		document.documentElement.dataset.pageType === "shorts") {
+		console.log("[ImprovedTube/player disableShortsPlayer] is true");
+		console.log(
+			"[ImprovedTube/player disableShortsPlayer] location = ", location
+		);
+		const { href } = location;
+
+		const newUrl = href.replace("shorts/", "watch?v=")
+		console.log("[ImprovedTube/player disableShortsPlayer] newUrl = ", newUrl);
+		location.replace(newUrl);
+	}
+}

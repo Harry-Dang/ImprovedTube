@@ -968,7 +968,17 @@ extension.skeleton.main.layers.section.player.on.click = {
 			component: 'switch',
 			text: 'forceSDR',
 			storage: 'player_SDR'
-		}
+		},
+		shorts_redirect: {
+			component: 'switch',
+			text: 'Redirect Shorts To Video Player',
+			storage: 'shorts_redirect'
+		},
+		shorts_replace: {
+			component: 'switch',
+			text: 'Replace Shorts Links To Video Links',
+			storage: 'shorts_replace'
+		},
 	},
 	section_2: {
 		component: 'section',
